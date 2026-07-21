@@ -1,1 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Beautiful Girl ❤️</title>
 
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+overflow:hidden;
+}
+
+.container{
+width:90%;
+max-width:600px;
+background:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.section{
+display:none;
+}
+
+.active{
+display:block;
+}
+
+h1{
+color:#ff4d88;
+margin-bottom:20px;
+}
+
+p{
+font-size:20px;
+line-height:1.8;
+color:#444;
+margin-bottom:30px;
+}
+
+button{
+background:#ff4d88;
+color:white;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div id="page1" class="section active">
+
+<h1>Hey Beautiful 🌸</h1>
+
+<p>
+Mujhe pata hai aaj tumhara mood thoda off hai...
+<br><br>
+Bas 2 minute mujhe de do. ❤️
+</p>
+
+<button onclick="nextPage(2)">
+Click Here ❤️
+</button>
+
+</div>
+<div id="page2" class="section">
+
+<h1>You Are Amazing 💖</h1>
+
+<p>
+Aaj ka din shayad thoda difficult tha...
+<br><br>
+
+Lekin tum bahut strong ho. 🌸
+<br><br>
+
+Aur ek baat...
+<br><br>
+
+Main hamesha tumhare saath hoon. ❤️
+</p>
+
+<button onclick="nextPage(3)">
+Need a Hug? 🤗
+</button>
+
+</div>
+<div id="page3" class="section">
+
+<h1>Virtual Hug 🤗</h1>
+
+<p id="hugText">
+Agar tum udaas ho...
+<br><br>
+To ye ek virtual hug sirf tumhare liye. ❤️
+</p>
+
+<button onclick="giveHug()">
+Give Me a Hug 🤍
+</button>
+
+</div>
+<div id="page4" class="section">
+
+<h1>😊 Smile Challenge 😊</h1>
+
+<p>
+
+Bas ek chhoti si request hai...
+
+<br><br>
+
+Please ek baar smile kar do. 💗
+
+<br><br>
+
+Tumhari smile bahut beautiful hai. ❤️
+
+</p>
+
+<button onclick="nextPage(5)">
+I Smiled 😊
+</button>
+
+</div>
+<div id="page5" class="section">
+
+<h1>❤️ Yayyy! ❤️</h1>
+
+Thank You for Smiling. 😊
+
+<br><br>
+
+Your smile means the world to me. 💖
+
+<br><br>
+
+No matter how hard life gets, never forget one thing...
+
+<br><br>
+
+<strong>I'm always with you. 🤍</strong>
+
+<br><br>
+
+I'll stand by your side through every smile, every tear, and every moment.
+
+<br><br>
+
+🌹 <strong>I Love You, Snoor. ❤️</strong>
+
+<br><br>
+
+Forever & Always. ♾️
+
+<button onclick="location.reload()">
+Start Again 🔄
+</button>
+
+</div>
+</div>
+
+<script>
+
+function nextPage(page){
+
+    document.querySelectorAll(".section").forEach(function(sec){
+        sec.classList.remove("active");
+    });
+
+    document.getElementById("page" + page).classList.add("active");
+
+}
+
+function giveHug(){
+
+    const text = document.getElementById("hugText");
+
+    text.innerHTML = "🤗 Sending a big warm hug... ❤️";
+
+    setTimeout(function(){
+        text.innerHTML = "💖 Hug Delivered Successfully!";
+    }, 2000);
+
+    setTimeout(function(){
+        nextPage(4);
+    }, 3000);
+
+}
+
+</script>
+
+</body>
+</html>
